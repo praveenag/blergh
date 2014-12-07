@@ -11,8 +11,11 @@ public class NumberMatcher {
     private final RecursiveMatcher recursiveMatcher = new RecursiveMatcher(cases);
     private final IterativeMatcher iterativeMatcher = new IterativeMatcher(cases);
 
-    public String match(Integer number) {
-//        return iterativeMatcher.match(number);
+    public String recursiveMatch(Integer number) {
         return recursiveMatcher.match(number);
+    }
+
+    public String iterativeMatch(Integer number) {
+        return iterativeMatcher.match(number);
     }
 }

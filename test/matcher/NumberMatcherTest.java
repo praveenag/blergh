@@ -10,26 +10,25 @@ public class NumberMatcherTest {
 
     @Test
     public void shouldPrintYayIfPositive() {
-        String actual = numberMatcher.match(new Integer(1));
-        assertEquals("yay", actual);
+        assertEquals("yay", numberMatcher.recursiveMatch(new Integer(1)));
+        assertEquals("yay", numberMatcher.iterativeMatch(new Integer(1)));
     }
 
     @Test
     public void shouldPrintNayIfNegative() {
-        String actual = numberMatcher.match(new Integer(-1));
-        assertEquals("nay", actual);
+        assertEquals("nay", numberMatcher.recursiveMatch(new Integer(-1)));
+        assertEquals("nay", numberMatcher.iterativeMatch(new Integer(-1)));
     }
 
     @Test
     public void shouldPrintBlerghIfZero() {
-        String actual = numberMatcher.match(new Integer(0));
-        assertEquals("blergh", actual);
+        assertEquals("blergh", numberMatcher.recursiveMatch(new Integer(0)));
+        assertEquals("blergh", numberMatcher.iterativeMatch(new Integer(0)));
     }
 
     @Test
-    public void sneakyTests() throws Exception {
-        NumberMatcher numberMatcher = new NumberMatcher();
-        String actual = numberMatcher.match(null);
-        assertEquals("blergh", actual);
+    public void nullShouldPrintAsBlergh() throws Exception {
+        assertEquals("blergh", numberMatcher.recursiveMatch(null));
+        assertEquals("blergh", numberMatcher.iterativeMatch(null));
     }
 }
