@@ -1,8 +1,9 @@
 package matcher;
 
 import jdk.nashorn.internal.ir.annotations.Ignore;
-import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,11 +30,9 @@ public class NumberMatcherTest {
     }
 
     @Test
-    @Ignore
     public void sneakyTests() throws Exception {
-//        NumberMatcher numberMatcher = new NumberMatcher();
-//        String actual = numberMatcher.match(null);
-//        assertEquals("blergh", actual);
-
+        NumberMatcher numberMatcher = new NumberMatcher();
+        String actual = numberMatcher.match(null);
+        assertEquals("blergh", actual);
     }
 }
