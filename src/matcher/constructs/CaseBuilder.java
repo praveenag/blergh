@@ -9,14 +9,10 @@ public class CaseBuilder {
 
     public List<Case> buildCases() {
         List<Case> cases = new ArrayList<>();
-        cases.add(build(isPositive(), () -> "yay"));
-        cases.add(build(isNegative(), () -> "nay"));
-        cases.add(build(defaultCondition(), () -> "blergh"));
+        cases.add(new Case(isPositive(), () -> "yay"));
+        cases.add(new Case(isNegative(), () -> "nay"));
+        cases.add(new Case(defaultCondition(), () -> "blergh"));
         return cases;
-    }
-
-    private Case build(When when, Supplier<String> chant) {
-        return new Case(when, chant);
     }
 
     private When defaultCondition() {

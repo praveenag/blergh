@@ -13,7 +13,7 @@ public class Case {
     }
 
     public Optional<String> applyIfPatternMatches(Integer number) {
-        if (condition.canApply(number).isSuccess()) {
+        if (condition.canApply(number).isPresent()) {
             return Optional.of(chant.get());
         }
         return Optional.empty();

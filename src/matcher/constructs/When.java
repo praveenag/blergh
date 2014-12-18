@@ -4,6 +4,7 @@ import matcher.result.ExecutionResult;
 import matcher.result.FailedExecution;
 import matcher.result.SuccessfulExecution;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 class When {
@@ -14,11 +15,11 @@ class When {
         this.cond = cond;
     }
 
-    public ExecutionResult canApply(Integer number) {
+    public Optional<Boolean> canApply(Integer number) {
         if (cond.apply(number)) {
-            return new SuccessfulExecution();
+            return Optional.of(true);
         } else {
-            return new FailedExecution();
+            return Optional.empty();
         }
     }
 }
